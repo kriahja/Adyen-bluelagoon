@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLFront", "BLFront\BLFront.csproj", "{48BE618F-BB3C-45B0-9137-68D3716E7766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{9C5E814A-E54D-484C-A52C-E5C6A0D5F657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLGateways", "BLGateways\BLGateways.csproj", "{CF1E090E-BB15-4053-BE1F-EF8B3EAAC24F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48BE618F-BB3C-45B0-9137-68D3716E7766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BE618F-BB3C-45B0-9137-68D3716E7766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BE618F-BB3C-45B0-9137-68D3716E7766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BE618F-BB3C-45B0-9137-68D3716E7766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5E814A-E54D-484C-A52C-E5C6A0D5F657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5E814A-E54D-484C-A52C-E5C6A0D5F657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5E814A-E54D-484C-A52C-E5C6A0D5F657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5E814A-E54D-484C-A52C-E5C6A0D5F657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1E090E-BB15-4053-BE1F-EF8B3EAAC24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1E090E-BB15-4053-BE1F-EF8B3EAAC24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1E090E-BB15-4053-BE1F-EF8B3EAAC24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1E090E-BB15-4053-BE1F-EF8B3EAAC24F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
