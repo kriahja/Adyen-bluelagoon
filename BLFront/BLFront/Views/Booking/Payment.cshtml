@@ -1,0 +1,29 @@
+﻿<head>
+    <script type="text/javascript" src="https://checkoutshopper-test.adyen.com/checkoutshopper/assets/js/sdk/checkoutSDK.1.3.0.min.js"></script>
+</head>
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Payment</h2>
+
+<div id="your-payment-div"></div>
+
+<script type="text/javascript">
+// Create a config object for SDK.
+var sdkConfigObj = {
+   context : 'test' // change it to 'live' when going live.
+};
+
+// Initiate the Checkout form.
+var checkout = chckt.checkout(paymentSession, '#your-payment-div', sdkConfigObj);
+
+chckt.hooks.beforeComplete = function (node, paymentData) {
+    // 'node' is a reference to the Checkout container HTML node.
+    // 'paymentData' is the result of the payment. Includes 'payload' variable,
+    // which you should submit to the server for the Checkout API /payments/result call.
+
+    return false; // Indicates that you want to replace the default handling.
+};
+</script>
+
