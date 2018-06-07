@@ -4,6 +4,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 
@@ -89,8 +90,17 @@ namespace BLFront.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Payment()
+        public async System.Threading.Tasks.Task<ActionResult> Payment()
         {
+            HttpResponseMessage p = facade.GetPaymentGateway().GetPaymentSession();
+           
+            string paymentSession = await p.Content.ReadAsStringAsync();
+            paymentSession.Skip(19);
+            paymentSession.Remove(paymentSession.Length - 1);
+
+            ViewBag.Message = paymentSession;
+
+            var x = 100;
             return View();
         }
 

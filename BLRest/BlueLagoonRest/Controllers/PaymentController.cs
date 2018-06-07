@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -33,16 +35,27 @@ namespace BlueLagoonRest.Controllers
                 p.amount.currency = "EUR";
                 p.amount.value = "17408";
 
+                //  client.DefaultRequestHeaders.Add("X-API-Key", "AQEohmfuXNWTK0Qc+iSSnnE9i+WcR4RDXcAbzbFpDx9OO+rHAwM5jxbGqxDBXVsNvuR83LVYjEgiTGAH-DUrUf5Wg6L0BVVYghEtoDaKMpVcVH++sBykcQv5GQFE=-pcey6tpM7uxSMry7");
 
+                //  var response = client.PostAsJsonAsync("https://checkout-test.adyen.com/v32/paymentSession", p).Result;
 
-               // client.DefaultRequestHeaders.Add("Content-Type", "application/json");
+                MediaTypeFormatter jsonFormatter = new JsonMediaTypeFormatter();
+                HttpContent content = new ObjectContent<Payment>(p, jsonFormatter);
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri("https://checkout-test.adyen.com/v32/paymentSession"),
+                    Method = HttpMethod.Post,
+                    Content = content
+                };
+                request.Headers.Add("X-API-Key", "AQEohmfuXNWTK0Qc+iSSnnE9i+WcR4RDXcAbzbFpDx9OO+rHAwM5jxbGqxDBXVsNvuR83LVYjEgiTGAH-DUrUf5Wg6L0BVVYghEtoDaKMpVcVH++sBykcQv5GQFE=-pcey6tpM7uxSMry7");
 
-                client.DefaultRequestHeaders.Add("X-API-Key", "AQEohmfuXNWTK0Qc+iSSnnE9i+WcR4RDXcAbzbFpDx9OO+rHAwM5jxbGqxDBXVsNvuR83LVYjEgiTGAH-DUrUf5Wg6L0BVVYghEtoDaKMpVcVH++sBykcQv5GQFE=-pcey6tpM7uxSMry7");
-
-                var response = client.PostAsJsonAsync("https://checkout-test.adyen.com/v32/paymentSession", p).Result;
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                var response = client.SendAsync(request).Result;
                 return response;
 
             }
         }
     }
 }
+ 

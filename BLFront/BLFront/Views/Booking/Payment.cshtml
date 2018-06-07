@@ -14,9 +14,10 @@
 var sdkConfigObj = {
    context : 'test' // change it to 'live' when going live.
 };
+   
 
 // Initiate the Checkout form.
-var checkout = chckt.checkout(paymentSession, '#your-payment-div', sdkConfigObj);
+    var checkout = chckt.checkout(@ViewBag.Message, '#your-payment-div', sdkConfigObj);
 
 chckt.hooks.beforeComplete = function (node, paymentData) {
     // 'node' is a reference to the Checkout container HTML node.
