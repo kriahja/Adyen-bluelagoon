@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModel\Amount.cs" />
     <Compile Include="DomainModel\Extra.cs" />
+    <Compile Include="DomainModel\Payment.cs" />
     <Compile Include="Facade.cs" />
     <Compile Include="Context\BLContext.cs" />
     <Compile Include="Context\ContextInitializer.cs" />
