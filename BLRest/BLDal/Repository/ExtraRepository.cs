@@ -38,7 +38,7 @@ namespace BLDal.Repository
         {
             using (var ctx = new BLContext())
             {
-                var ExtraDB = ctx.Extras.Include("Package").FirstOrDefault(x => x.Id == Extra.Id);
+                var ExtraDB = ctx.Extras.FirstOrDefault(x => x.Id == Extra.Id);
                 ctx.Entry(ExtraDB).CurrentValues.SetValues(Extra);
               
                 ctx.SaveChanges();

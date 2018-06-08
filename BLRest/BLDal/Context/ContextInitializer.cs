@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLDal.Context
 {
-    public class ContextInitializer : DropCreateDatabaseIfModelChanges<BLContext>
+    public class ContextInitializer : DropCreateDatabaseAlways<BLContext>
     {
 
         protected override void Seed(BLContext context)
@@ -17,6 +17,9 @@ namespace BLDal.Context
 
             Package pack1 = context.Packages.Add(new Package() { Id = 0, name = "Basic", price = 1000 });
             Package pack2 = context.Packages.Add(new Package() { Id = 0, name = "Deluxe", price = 3000 });
+
+            Extra ex1 = context.Extras.Add(new Extra() { Id = 0, name = "Reservation", price = 0 });
+            Extra ex2 = context.Extras.Add(new Extra() { Id = 0, name = "Massage", price = 500 });
 
             bookings.Add(new Booking()
             {
