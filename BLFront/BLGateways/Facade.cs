@@ -23,5 +23,10 @@ namespace BLGateways
         {
             return new PackageGatewayService();
         }
+
+        public PaymentGatewayService GetPaymentGateway()
+        {
+            return new PaymentGatewayService();
+        }
     }
 }

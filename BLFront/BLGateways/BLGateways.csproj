@@ -58,6 +58,7 @@
     <Compile Include="Services\ExtraGatewayService.cs" />
     <Compile Include="Services\PackageGatewayService.cs" />
     <Compile Include="Services\BookingGatewayService.cs" />
+    <Compile Include="Services\PaymentGatewayService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">

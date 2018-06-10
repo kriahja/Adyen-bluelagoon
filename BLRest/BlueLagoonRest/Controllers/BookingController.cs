@@ -1,9 +1,12 @@
 ﻿using BLDal;
 using BLDal.DomainModel;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -28,6 +31,10 @@ namespace BlueLagoonRest.Controllers
         {
             facade.GetBookingRepository().Add(booking);
         }
+
+       
+
+       
 
         public void DeleteBooking(int id)
         {
