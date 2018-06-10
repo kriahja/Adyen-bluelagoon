@@ -217,6 +217,7 @@
     <Compile Include="Controllers\ExtraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PackageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +292,7 @@
     <Folder Include="Views\Booking\" />
     <Folder Include="Views\Extra\" />
     <Folder Include="Views\Package\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
